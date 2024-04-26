@@ -1,8 +1,16 @@
+<?php
+session_start();
+
+if (isset($_SESSION['username'])) {
+    header('Location: index.php');
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-
     <meta charset="utf-8">
     <title>AdaRumah</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -16,7 +24,7 @@
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">  
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
@@ -37,32 +45,30 @@
             <div class="col-lg-7 mb-5">
                 <div class="contact-form bg-light p-30">
                     <div id="success"></div>
-                    <img src="img/adarumah.png" alt="Login Image" class="mx-auto d-block mb-4" style="max-width: 200px;">
-                    <form name="Login" id="Singup" novalidate="novalidate">
+                    <img src="img/adarumah.png" alt="Login Image" class="mx-auto d-block mb-4"
+                        style="max-width: 200px;">
+                    <form action="service/action/login.php" method="post" name="Login" id="Singup">
+                        <!-- usernmae -->
                         <div class="control-group">
-                            <input type="text" class="form-control" id="name" placeholder="Username"
-                                required="required" data-validation-required-message="Please enter your name" />
+                            <input type="text" class="form-control" id="username" name="username" placeholder="Username"
+                                required="required" data-validation-required-message="Enter Username" />
                             <p class="help-block text-danger"></p>
                         </div>
                         <div class="control-group">
-                            <input type="password" class="form-control" id="password" placeholder="Password"
-                                required="required" data-validation-required-message="Please enter a Password" />
-                            <p class="help-block text-danger"></p>
-                        </div>
-                        <div class="control-group">
-                            <input type="email" class="form-control" id="email" placeholder="Email"
-                                required="required" data-validation-required-message="Please enter your email" />
+                            <input type="password" class="form-control" id="password" name="password"
+                                placeholder="Password" required="required"
+                                data-validation-required-message="Enter Password" />
                             <p class="help-block text-danger"></p>
                         </div>
                         <div>
-                            <a href="index.html" class="btn btn-primary py-2 px-4">Login</a>
+                            <button type="submit" name="login" class="btn btn-primary py-2 px-4">Login</button>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
-    
+
     <!-- Login End -->
 
     <!-- JavaScript Libraries -->
