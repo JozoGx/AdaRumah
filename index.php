@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['username'])) {
+if (!isset($_SESSION['isLogin'])) {
     header('Location: login.php');
 }
 
@@ -34,6 +34,10 @@ if (!isset($_SESSION['username'])) {
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    <!-- CDN Bootstrap -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
+
 </head>
 
 <body>
@@ -47,27 +51,35 @@ if (!isset($_SESSION['username'])) {
                     <a class="text-body mr-3" href="https://wa.me/62895341303880">Help</a>
                 </div>
             </div>
+            <!-- <div class="d-flex justify-content-end align-items-end "> -->
             <div class="col-lg-6 text-center text-lg-right">
-                <div class="d-inline-flex align-items-center">
-                    <div class="btn-group">
+                <div class="d-inline-flex align-items-center gap-3">
+                    <!-- seeder -->
+                    <div class="dropdown mx-2">
+                        <button class="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">Seeder</button>
+                        <ul class="dropdown-menu">
+                            <li><a href="service/seeder/user.php" class="dropdown-item">
+                                    UserSeeder</a></li>
+                            <li><a href="service/seeder/post.php" class="dropdown-item">
+                                    PostSeeder</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </div>
+                    <!-- account -->
+                    <div class="dropdown mx-2">
                         <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">My
                             Account</button>
-                        <form action="service/action/logout.php" method="post" class="dropdown-menu dropdown-menu-right">
-                            <button name="logout" class="dropdown-item" >Logout</button>
-                        </form>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <form action="service/action/logout.php" method="post">
+                                    <button name="logout"
+                                        class="bg-transparent border border-light px-4 ">Logout</button>
+                                </form>
+                            </li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
                     </div>
-                </div>
-                <div class="d-inline-flex align-items-center d-block d-lg-none">
-                    <a href="" class="btn px-0 ml-2">
-                        <i class="fas fa-heart text-dark"></i>
-                        <span class="badge text-dark border border-dark rounded-circle"
-                            style="padding-bottom: 2px;">0</span>
-                    </a>
-                    <a href="" class="btn px-0 ml-2">
-                        <i class="fas fa-shopping-cart text-dark"></i>
-                        <span class="badge text-dark border border-dark rounded-circle"
-                            style="padding-bottom: 2px;">0</span>
-                    </a>
                 </div>
             </div>
         </div>
@@ -609,9 +621,10 @@ if (!isset($_SESSION['username'])) {
                                 Us</a>
                         </div>
                     </div>
+                    <!-- myAccount -->
                     <div class="col-md-4 mb-5">
                         <h5 class="text-secondary text-uppercase mb-4">My Account</h5>
-                        <div class="d-flex flex-column justify-content-start">
+                        <!-- <div class="d-flex flex-column justify-content-start">
                             <a class="text-secondary mb-2" href="index.html"><i
                                     class="fa fa-angle-right mr-2"></i>Home</a>
                             <a class="text-secondary mb-2" href="shop.html"><i class="fa fa-angle-right mr-2"></i>Our
@@ -620,7 +633,7 @@ if (!isset($_SESSION['username'])) {
                                 Detail</a>
                             <a class="text-secondary" href="contact.html"><i class="fa fa-angle-right mr-2"></i>Contact
                                 Us</a>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="col-md-4 mb-5">
                         <h5 class="text-secondary text-uppercase mb-4">Rumah</h5>
@@ -671,10 +684,14 @@ if (!isset($_SESSION['username'])) {
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
     <script src="lib/easing/easing.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
 
     <!-- Contact Javascript File -->
-    <script src="mail/jqBootstrapValidation.min.js"></script>
-    <script src="mail/contact.js"></script>
+    <script src="mail/jqBootstrapValidation.min.js"></>
+            <script src="mail/contact.js"></script>
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>

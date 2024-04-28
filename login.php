@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if (isset($_SESSION['username'])) {
+if (isset($_SESSION['isLogin'])) {
     header('Location: index.php');
 }
 
@@ -48,12 +48,13 @@ if (isset($_SESSION['username'])) {
                     <img src="img/adarumah.png" alt="Login Image" class="mx-auto d-block mb-4"
                         style="max-width: 200px;">
                     <form action="service/action/login.php" method="post" name="Login" id="Singup">
-                        <!-- usernmae -->
+                        <!-- email -->
                         <div class="control-group">
-                            <input type="text" class="form-control" id="username" name="username" placeholder="Username"
-                                required="required" data-validation-required-message="Enter Username" />
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Email"
+                                required="required" data-validation-required-message="Enter Email" autofocus/>
                             <p class="help-block text-danger"></p>
                         </div>
+                        <!-- password -->
                         <div class="control-group">
                             <input type="password" class="form-control" id="password" name="password"
                                 placeholder="Password" required="required"
