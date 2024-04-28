@@ -23,7 +23,7 @@ if (!isset($_SESSION['isLogin'])) {
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">  
 
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
@@ -114,17 +114,14 @@ if (!isset($_SESSION['isLogin'])) {
     <div class="container-fluid bg-dark mb-30">
         <div class="row px-xl-5">
             <div class="col-lg-3 d-none d-lg-block">
-                <a class="btn d-flex align-items-center justify-content-between bg-primary w-100" data-toggle="collapse"
-                    href="#navbar-vertical" style="height: 65px; padding: 0 30px;">
+                <a class="btn d-flex align-items-center justify-content-between bg-primary w-100" data-toggle="collapse" href="#navbar-vertical" style="height: 65px; padding: 0 30px;">
                     <h6 class="text-dark m-0"><i class="fa fa-bars mr-2"></i>Categories</h6>
                     <i class="fa fa-angle-down text-dark"></i>
                 </a>
-                <nav class="collapse position-absolute navbar navbar-vertical navbar-light align-items-start p-0 bg-light"
-                    id="navbar-vertical" style="width: calc(100% - 30px); z-index: 999;">
+                <nav class="collapse position-absolute navbar navbar-vertical navbar-light align-items-start p-0 bg-light" id="navbar-vertical" style="width: calc(100% - 30px); z-index: 999;">
                     <div class="navbar-nav w-100">
                         <div class="nav-item dropdown dropright">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Rumah <i
-                                    class="fa fa-angle-right float-right mt-1"></i></a>
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Rumah <i class="fa fa-angle-right float-right mt-1"></i></a>
                             <div class="dropdown-menu position-absolute rounded-0 border-0 m-0">
                                 <a href="" class="dropdown-item">Rumah Murah</a>
                                 <a href="" class="dropdown-item">Rumah Sedang</a>
@@ -132,8 +129,7 @@ if (!isset($_SESSION['isLogin'])) {
                             </div>
                         </div>
                         <div class="nav-item dropdown dropright">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Kontrakan <i
-                                    class="fa fa-angle-right float-right mt-1"></i></a>
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Kontrakan <i class="fa fa-angle-right float-right mt-1"></i></a>
                             <div class="dropdown-menu position-absolute rounded-0 border-0 m-0">
                                 <a href="" class="dropdown-item">Bulanan</a>
                                 <a href="" class="dropdown-item">Tahunan</a>
@@ -162,8 +158,7 @@ if (!isset($_SESSION['isLogin'])) {
                         <div class="navbar-nav ml-auto py-0 d-none d-lg-block">
                             <a href="" class="btn px-0">
                                 <i class="fas fa-heart text-primary"></i>
-                                <span class="badge text-secondary border border-secondary rounded-circle"
-                                    style="padding-bottom: 2px;">0</span>
+                                <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">0</span>
                             </a>
                         </div>
                     </div>
@@ -186,44 +181,32 @@ if (!isset($_SESSION['isLogin'])) {
                     </ol>
                     <div class="carousel-inner">
                         <div class="carousel-item position-relative active" style="height: 430px;">
-                            <img class="position-absolute w-100 h-100" src="img/rumahmurah1.jpg"
-                                style="object-fit: cover;">
+                            <img class="position-absolute w-100 h-100" src="img/rumahmurah1.jpg" style="object-fit: cover;">
                             <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                                 <div class="p-3" style="max-width: 700px;">
-                                    <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown">Rumah
-                                        Murah</h1>
-                                    <p class="mx-md-5 px-5 animate__animated animate__bounceIn">Lorem rebum magna amet
-                                        lorem magna erat diam stet. Sadips duo stet amet amet ndiam elitr ipsum diam</p>
-                                    <a class="btn btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp"
-                                        href="#">Beli</a>
+                                    <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown">Rumah Murah</h1>
+                                    <p class="mx-md-5 px-5 animate__animated animate__bounceIn">Lorem rebum magna amet lorem magna erat diam stet. Sadips duo stet amet amet ndiam elitr ipsum diam</p>
+                                    <a class="btn btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp" href="#">Beli</a>
                                 </div>
                             </div>
                         </div>
                         <div class="carousel-item position-relative" style="height: 430px;">
-                            <img class="position-absolute w-100 h-100" src="img/rumahsedang1.jpg"
-                                style="object-fit: cover;">
+                            <img class="position-absolute w-100 h-100" src="img/rumahsedang1.jpg" style="object-fit: cover;">
                             <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                                 <div class="p-3" style="max-width: 700px;">
-                                    <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown">Rumah
-                                        Mahal</h1>
-                                    <p class="mx-md-5 px-5 animate__animated animate__bounceIn">Lorem rebum magna amet
-                                        lorem magna erat diam stet. Sadips duo stet amet amet ndiam elitr ipsum diam</p>
-                                    <a class="btn btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp"
-                                        href="#">Beli</a>
+                                    <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown">Rumah Mahal</h1>
+                                    <p class="mx-md-5 px-5 animate__animated animate__bounceIn">Lorem rebum magna amet lorem magna erat diam stet. Sadips duo stet amet amet ndiam elitr ipsum diam</p>
+                                    <a class="btn btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp" href="#">Beli</a>
                                 </div>
                             </div>
                         </div>
                         <div class="carousel-item position-relative" style="height: 430px;">
-                            <img class="position-absolute w-100 h-100" src="img/rumahmewah1.jpg"
-                                style="object-fit: cover;">
+                            <img class="position-absolute w-100 h-100" src="img/rumahmewah1.jpg" style="object-fit: cover;">
                             <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                                 <div class="p-3" style="max-width: 700px;">
-                                    <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown">Rumah
-                                        Mewah</h1>
-                                    <p class="mx-md-5 px-5 animate__animated animate__bounceIn">Lorem rebum magna amet
-                                        lorem magna erat diam stet. Sadips duo stet amet amet ndiam elitr ipsum diam</p>
-                                    <a class="btn btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp"
-                                        href="#">Beli</a>
+                                    <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown">Rumah Mewah</h1>
+                                    <p class="mx-md-5 px-5 animate__animated animate__bounceIn">Lorem rebum magna amet lorem magna erat diam stet. Sadips duo stet amet amet ndiam elitr ipsum diam</p>
+                                    <a class="btn btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp" href="#">Beli</a>
                                 </div>
                             </div>
                         </div>
@@ -287,8 +270,7 @@ if (!isset($_SESSION['isLogin'])) {
 
     <!-- Categories Start -->
     <div class="container-fluid pt-5">
-        <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span
-                class="bg-secondary pr-3">Categories</span></h2>
+        <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">Categories</span></h2>
         <div class="row px-xl-5 pb-3">
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
                 <a class="text-decoration-none" href="">
@@ -362,8 +344,7 @@ if (!isset($_SESSION['isLogin'])) {
 
     <!-- Products Start -->
     <div class="container-fluid pt-5 pb-3">
-        <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span
-                class="bg-secondary pr-3">Rumah</span></h2>
+        <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">Rumah</span></h2>
         <div class="row px-xl-5">
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
                 <div class="product-item bg-light mb-4">
@@ -379,8 +360,7 @@ if (!isset($_SESSION['isLogin'])) {
                     <div class="text-center py-4">
                         <a class="h6 text-decoration-none text-truncate" href="">Rumah Bu Yuli</a>
                         <div class="d-flex align-items-center justify-content-center mt-2">
-                            <h5>Rp. 190.000.000</h5>
-                            <h6 class="text-muted ml-2"><del>Rp. 200.000.000</del></h6>
+                            <h5>Rp. 190.000.000</h5><h6 class="text-muted ml-2"><del>Rp. 200.000.000</del></h6>
                         </div>
                         <div class="d-flex align-items-center justify-content-center mb-1">
                             <small class="fa fa-star text-primary mr-1"></small>
@@ -407,8 +387,7 @@ if (!isset($_SESSION['isLogin'])) {
                     <div class="text-center py-4">
                         <a class="h6 text-decoration-none text-truncate" href="">Rumah Jon</a>
                         <div class="d-flex align-items-center justify-content-center mt-2">
-                            <h5>Rp. 125.000.000</h5>
-                            <h6 class="text-muted ml-2"><del>Rp. 130.000.000</del></h6>
+                            <h5>Rp. 125.000.000</h5><h6 class="text-muted ml-2"><del>Rp. 130.000.000</del></h6>
                         </div>
                         <div class="d-flex align-items-center justify-content-center mb-1">
                             <small class="fa fa-star text-primary mr-1"></small>
@@ -435,8 +414,7 @@ if (!isset($_SESSION['isLogin'])) {
                     <div class="text-center py-4">
                         <a class="h6 text-decoration-none text-truncate" href="">Rumah Yanto</a>
                         <div class="d-flex align-items-center justify-content-center mt-2">
-                            <h5>Rp. 175.000.000</h5>
-                            <h6 class="text-muted ml-2"><del>Rp. 180.000.000</del></h6>
+                            <h5>Rp. 175.000.000</h5><h6 class="text-muted ml-2"><del>Rp. 180.000.000</del></h6>
                         </div>
                         <div class="d-flex align-items-center justify-content-center mb-1">
                             <small class="fa fa-star text-primary mr-1"></small>
@@ -463,8 +441,7 @@ if (!isset($_SESSION['isLogin'])) {
                     <div class="text-center py-4">
                         <a class="h6 text-decoration-none text-truncate" href="">Rumah Pak Dedih</a>
                         <div class="d-flex align-items-center justify-content-center mt-2">
-                            <h5>Rp. 760.000.000</h5>
-                            <h6 class="text-muted ml-2"><del>Rp. 750.000.000</del></h6>
+                            <h5>Rp. 760.000.000</h5><h6 class="text-muted ml-2"><del>Rp. 750.000.000</del></h6>
                         </div>
                         <div class="d-flex align-items-center justify-content-center mb-1">
                             <small class="fa fa-star text-primary mr-1"></small>
@@ -491,8 +468,7 @@ if (!isset($_SESSION['isLogin'])) {
                     <div class="text-center py-4">
                         <a class="h6 text-decoration-none text-truncate" href="">Rumah Pak Reygan</a>
                         <div class="d-flex align-items-center justify-content-center mt-2">
-                            <h5>Rp. 950.000.000</h5>
-                            <h6 class="text-muted ml-2"><del>Rp. 1.000.000.000</del></h6>
+                            <h5>Rp. 950.000.000</h5><h6 class="text-muted ml-2"><del>Rp. 1.000.000.000</del></h6>
                         </div>
                         <div class="d-flex align-items-center justify-content-center mb-1">
                             <small class="fa fa-star text-primary mr-1"></small>
@@ -519,8 +495,7 @@ if (!isset($_SESSION['isLogin'])) {
                     <div class="text-center py-4">
                         <a class="h6 text-decoration-none text-truncate" href="">Rumah Pak Hendro</a>
                         <div class="d-flex align-items-center justify-content-center mt-2">
-                            <h5>Rp. 2.235.0000.000</h5>
-                            <h6 class="text-muted ml-2"><del>Rp. 2.250.000.000</del></h6>
+                            <h5>Rp. 2.235.0000.000</h5><h6 class="text-muted ml-2"><del>Rp. 2.250.000.000</del></h6>
                         </div>
                         <div class="d-flex align-items-center justify-content-center mb-1">
                             <small class="fa fa-star text-primary mr-1"></small>
@@ -547,8 +522,7 @@ if (!isset($_SESSION['isLogin'])) {
                     <div class="text-center py-4">
                         <a class="h6 text-decoration-none text-truncate" href="">Rumah Cak Robert</a>
                         <div class="d-flex align-items-center justify-content-center mt-2">
-                            <h5>Free</h5>
-                            <h6 class="text-muted ml-2"><del>Rp. 7.600.000.000</del></h6>
+                            <h5>Free</h5><h6 class="text-muted ml-2"><del>Rp. 7.600.000.000</del></h6>
                         </div>
                         <div class="d-flex align-items-center justify-content-center mb-1">
                             <small class="fa fa-star text-primary mr-1"></small>
@@ -575,8 +549,7 @@ if (!isset($_SESSION['isLogin'])) {
                     <div class="text-center py-4">
                         <a class="h6 text-decoration-none text-truncate" href="">Rumah Pak Iwan</a>
                         <div class="d-flex align-items-center justify-content-center mt-2">
-                            <h5>Rp. 12.000.000.000</h5>
-                            <h6 class="text-muted ml-2"><del>Rp. 12.250.000.000</del></h6>
+                            <h5>Rp. 12.000.000.000</h5><h6 class="text-muted ml-2"><del>Rp. 12.250.000.000</del></h6>
                         </div>
                         <div class="d-flex align-items-center justify-content-center mb-1">
                             <small class="fa fa-star text-primary mr-1"></small>
@@ -599,10 +572,8 @@ if (!isset($_SESSION['isLogin'])) {
         <div class="row px-xl-5 pt-5">
             <div class="col-lg-4 col-md-12 mb-5 pr-3 pr-xl-5">
                 <h5 class="text-secondary text-uppercase mb-4">About Us</h5>
-                <p class="mb-4">No dolore ipsum accusam no lorem. Invidunt sed clita kasd clita et et dolor sed dolor.
-                    Rebum tempor no vero est magna amet no</p>
-                <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i>Jl. STM Pembangunan, Mrican,
-                    Caturtunggal, Kec. Depok, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55281</p>
+                <p class="mb-4">No dolore ipsum accusam no lorem. Invidunt sed clita kasd clita et et dolor sed dolor. Rebum tempor no vero est magna amet no</p>
+                <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i>Jl. STM Pembangunan, Mrican, Caturtunggal, Kec. Depok, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55281</p>
                 <p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i>robertodarel42@gmail.com</p>
                 <p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i>+62895 3413 03880</p>
             </div>
@@ -611,14 +582,10 @@ if (!isset($_SESSION['isLogin'])) {
                     <div class="col-md-4 mb-5">
                         <h5 class="text-secondary text-uppercase mb-4">Quick Shop</h5>
                         <div class="d-flex flex-column justify-content-start">
-                            <a class="text-secondary mb-2" href="index.html"><i
-                                    class="fa fa-angle-right mr-2"></i>Home</a>
-                            <a class="text-secondary mb-2" href="shop.html"><i class="fa fa-angle-right mr-2"></i>Our
-                                Shop</a>
-                            <a class="text-secondary mb-2" href="detail.html"><i class="fa fa-angle-right mr-2"></i>Shop
-                                Detail</a>
-                            <a class="text-secondary" href="contact.html"><i class="fa fa-angle-right mr-2"></i>Contact
-                                Us</a>
+                            <a class="text-secondary mb-2" href="index.html"><i class="fa fa-angle-right mr-2"></i>Home</a>
+                            <a class="text-secondary mb-2" href="shop.html"><i class="fa fa-angle-right mr-2"></i>Our Shop</a>
+                            <a class="text-secondary mb-2" href="detail.html"><i class="fa fa-angle-right mr-2"></i>Shop Detail</a>
+                            <a class="text-secondary" href="contact.html"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
                         </div>
                     </div>
                     <!-- myAccount -->
@@ -634,15 +601,21 @@ if (!isset($_SESSION['isLogin'])) {
                             <a class="text-secondary" href="contact.html"><i class="fa fa-angle-right mr-2"></i>Contact
                                 Us</a>
                         </div> -->
+                        <div class="d-flex flex-column justify-content-start">
+                            <a class="text-secondary mb-2" href="index.html"><i class="fa fa-angle-right mr-2"></i>Home</a>
+                            <a class="text-secondary mb-2" href="shop.html"><i class="fa fa-angle-right mr-2"></i>Our Shop</a>
+                            <a class="text-secondary mb-2" href="detail.html"><i class="fa fa-angle-right mr-2"></i>Shop Detail</a>
+                            <a class="text-secondary" href="contact.html"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
+                        </div>
                     </div>
                     <div class="col-md-4 mb-5">
                         <h5 class="text-secondary text-uppercase mb-4">Rumah</h5>
                         <p>Duo stet tempor ipsum sit amet magna ipsum tempor est</p>
-                        <form action="service/action/logout.php" method="post" name="logout">
+                        <form action="">
                             <div class="input-group">
                                 <input type="text" class="form-control" placeholder="Your Email Address">
                                 <div class="input-group-append">
-                                    <button class="btn btn-primary">Logout</button>
+                                    <button class="btn btn-primary">Sign Up</button>
                                 </div>
                             </div>
                         </form>
@@ -651,8 +624,7 @@ if (!isset($_SESSION['isLogin'])) {
                             <a class="btn btn-primary btn-square mr-2" href="#"><i class="fab fa-twitter"></i></a>
                             <a class="btn btn-primary btn-square mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
                             <a class="btn btn-primary btn-square mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a class="btn btn-primary btn-square" href="https://www.instagram.com/robertdrl_"><i
-                                    class="fab fa-instagram"></i></a>
+                            <a class="btn btn-primary btn-square" href="https://www.instagram.com/robertdrl_"><i class="fab fa-instagram"></i></a>
                         </div>
                     </div>
                 </div>
@@ -690,7 +662,7 @@ if (!isset($_SESSION['isLogin'])) {
 
 
     <!-- Contact Javascript File -->
-    <script src="mail/jqBootstrapValidation.min.js"></>
+    <script src="mail/jqBootstrapValidation.min.js"></script>
             <script src="mail/contact.js"></script>
 
     <!-- Template Javascript -->

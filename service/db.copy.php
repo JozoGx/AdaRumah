@@ -5,3 +5,4 @@ $password = '';
 $dbName = 'adarumah';
 
 $conn = new mysqli($hostname, $username, $password, $dbName);
+
