@@ -15,4 +15,4 @@ for ($i=1; $i <= 50; $i++) {
   $conn->query("INSERT INTO posts (user_id, title, price, address) VALUES ('$user_id', '$title', '$price', '$address')");
 }
 
-header('Location: /adarumah/');
+header('Location: /');

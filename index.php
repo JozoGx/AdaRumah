@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once 'service/db.php';
 
 if (!isset($_SESSION['isLogin'])) {
     header('Location: login.php');
@@ -42,137 +43,12 @@ if (!isset($_SESSION['isLogin'])) {
 
 <body>
     <!-- Topbar Start -->
-    <div class="container-fluid">
-        <div class="row bg-secondary py-1 px-xl-5">
-            <div class="col-lg-6 d-none d-lg-block">
-                <div class="d-inline-flex align-items-center h-100">
-                    <a class="text-body mr-3" href="">About</a>
-                    <a class="text-body mr-3" href="https://wa.me/62895341303880">Contact</a>
-                    <a class="text-body mr-3" href="https://wa.me/62895341303880">Help</a>
-                </div>
-            </div>
-            <!-- <div class="d-flex justify-content-end align-items-end "> -->
-            <div class="col-lg-6 text-center text-lg-right">
-                <div class="d-inline-flex align-items-center gap-3">
-                    <!-- seeder -->
-                    <div class="dropdown mx-2">
-                        <button class="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">Seeder</button>
-                        <ul class="dropdown-menu">
-                            <li><a href="service/seeder/user.php" class="dropdown-item">
-                                    UserSeeder</a></li>
-                            <li><a href="service/seeder/post.php" class="dropdown-item">
-                                    PostSeeder</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                    </div>
-                    <!-- account -->
-                    <div class="dropdown mx-2">
-                        <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">My
-                            Account</button>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <form action="service/action/logout.php" method="post">
-                                    <button name="logout"
-                                        class="bg-transparent border border-light px-4 ">Logout</button>
-                                </form>
-                            </li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row align-items-center bg-light py-3 px-xl-5 d-none d-lg-flex">
-            <div class="col-lg-4">
-                <a href="" class="text-decoration-none">
-                    <span class="h1 text-uppercase text-white bg-dark px-2">Ada</span>
-                    <span class="h1 text-uppercase text-dark bg-white px-2 ml-n1">Rumah</span>
-                </a>
-            </div>
-            <div class="col-lg-4 col-6 text-left">
-                <form action="">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Cari Rumah">
-                        <div class="input-group-append">
-                            <span class="input-group-text bg-transparent text-primary">
-                                <i class="fa fa-search"></i>
-                            </span>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="col-lg-4 col-6 text-right">
-                <a class="m-0" href="https://wa.me/62895341303880">Customer Service</a>
-            </div>
-        </div>
-    </div>
+    <?php include 'components/topbar.html' ?>
     <!-- Topbar End -->
 
-
     <!-- Navbar Start -->
-    <div class="container-fluid bg-dark mb-30">
-        <div class="row px-xl-5">
-            <div class="col-lg-3 d-none d-lg-block">
-                <a class="btn d-flex align-items-center justify-content-between bg-primary w-100" data-toggle="collapse"
-                    href="#navbar-vertical" style="height: 65px; padding: 0 30px;">
-                    <h6 class="text-dark m-0"><i class="fa fa-bars mr-2"></i>Categories</h6>
-                    <i class="fa fa-angle-down text-dark"></i>
-                </a>
-                <nav class="collapse position-absolute navbar navbar-vertical navbar-light align-items-start p-0 bg-light"
-                    id="navbar-vertical" style="width: calc(100% - 30px); z-index: 999;">
-                    <div class="navbar-nav w-100">
-                        <div class="nav-item dropdown dropright">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Rumah <i
-                                    class="fa fa-angle-right float-right mt-1"></i></a>
-                            <div class="dropdown-menu position-absolute rounded-0 border-0 m-0">
-                                <a href="" class="dropdown-item">Rumah Murah</a>
-                                <a href="" class="dropdown-item">Rumah Sedang</a>
-                                <a href="" class="dropdown-item">Rumah Mahal</a>
-                            </div>
-                        </div>
-                        <div class="nav-item dropdown dropright">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Kontrakan <i
-                                    class="fa fa-angle-right float-right mt-1"></i></a>
-                            <div class="dropdown-menu position-absolute rounded-0 border-0 m-0">
-                                <a href="" class="dropdown-item">Bulanan</a>
-                                <a href="" class="dropdown-item">Tahunan</a>
-                            </div>
-                        </div>
-                        <a href="" class="nav-item nav-link">Kos-kosan</a>
-                    </div>
-                </nav>
-            </div>
-            <div class="col-lg-9">
-                <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 py-lg-0 px-0">
-                    <a href="" class="text-decoration-none d-block d-lg-none">
-                        <span class="h1 text-uppercase text-dark bg-light px-2">Ada</span>
-                        <span class="h1 text-uppercase text-light bg-dark px-2 ml-n1">Rumah</span>
-                    </a>
-                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
-                        <div class="navbar-nav mr-auto py-0">
-                            <a href="index.html" class="nav-item nav-link active">Home</a>
-                            <a href="shop.html" class="nav-item nav-link">Shop</a>
-                            <a href="detail.html" class="nav-item nav-link">Shop Detail</a>
-                            <a href="contact.html" class="nav-item nav-link">Contact</a>
-                        </div>
-                        <div class="navbar-nav ml-auto py-0 d-none d-lg-block">
-                            <a href="" class="btn px-0">
-                                <i class="fas fa-heart text-primary"></i>
-                                <span class="badge text-secondary border border-secondary rounded-circle"
-                                    style="padding-bottom: 2px;">0</span>
-                            </a>
-                        </div>
-                    </div>
-                </nav>
-            </div>
-        </div>
-    </div>
+    <?php include 'components/navbar.html'; ?>
     <!-- Navbar End -->
-
 
     <!-- Carousel Start -->
     <div class="container-fluid mb-3">
@@ -359,41 +235,49 @@ if (!isset($_SESSION['isLogin'])) {
     </div>
     <!-- Categories End -->
 
-
     <!-- Products Start -->
     <div class="container-fluid pt-5 pb-3">
         <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span
                 class="bg-secondary pr-3">Rumah</span></h2>
         <div class="row px-xl-5">
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <div class="product-item bg-light mb-4">
-                    <div class="product-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="photos/rumahmurah1.jpg" alt="">
-                        <div class="product-action">
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
+            <?php
+            $sqlPosts = "SELECT * FROM posts";
+            $posts = $conn->query($sqlPosts);
+
+            foreach ($posts as $post) {
+                ?>
+                <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+                    <div class="product-item bg-light mb-4">
+                        <div class="product-img position-relative overflow-hidden">
+                            <img class="img-fluid w-100" src="photos/rumahmurah1.jpg" alt="">
+                            <div class="product-action">
+                                <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
+                                <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
+                                <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
+                                <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="text-center py-4">
-                        <a class="h6 text-decoration-none text-truncate" href="">Rumah Bu Yuli</a>
-                        <div class="d-flex align-items-center justify-content-center mt-2">
-                            <h5>Rp. 190.000.000</h5>
-                            <h6 class="text-muted ml-2"><del>Rp. 200.000.000</del></h6>
-                        </div>
-                        <div class="d-flex align-items-center justify-content-center mb-1">
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small>(12)</small>
+                        <div class="text-center py-4">
+                            <a class="h6 text-decoration-none text-truncate" href="">Rumah Bu Yuli</a>
+                            <div class="d-flex align-items-center justify-content-center mt-2">
+                                <h5>Rp. 190.000.000</h5>
+                                <h6 class="text-muted ml-2"><del>Rp. 200.000.000</del></h6>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-center mb-1">
+                                <small class="fa fa-star text-primary mr-1"></small>
+                                <small class="fa fa-star text-primary mr-1"></small>
+                                <small class="fa fa-star text-primary mr-1"></small>
+                                <small class="fa fa-star text-primary mr-1"></small>
+                                <small class="fa fa-star text-primary mr-1"></small>
+                                <small>(12)</small>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+                <?php
+            }
+            ?>
+            <!-- <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
                 <div class="product-item bg-light mb-4">
                     <div class="product-img position-relative overflow-hidden">
                         <img class="img-fluid w-100" src="photos/rumahmurah2.jpeg" alt="">
@@ -588,96 +472,19 @@ if (!isset($_SESSION['isLogin'])) {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
     <!-- Products End -->
 
 
     <!-- Footer Start -->
-    <div class="container-fluid bg-dark text-secondary mt-5 pt-5">
-        <div class="row px-xl-5 pt-5">
-            <div class="col-lg-4 col-md-12 mb-5 pr-3 pr-xl-5">
-                <h5 class="text-secondary text-uppercase mb-4">About Us</h5>
-                <p class="mb-4">No dolore ipsum accusam no lorem. Invidunt sed clita kasd clita et et dolor sed dolor.
-                    Rebum tempor no vero est magna amet no</p>
-                <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i>Jl. STM Pembangunan, Mrican,
-                    Caturtunggal, Kec. Depok, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55281</p>
-                <p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i>robertodarel42@gmail.com</p>
-                <p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i>+62895 3413 03880</p>
-            </div>
-            <div class="col-lg-8 col-md-12">
-                <div class="row">
-                    <div class="col-md-4 mb-5">
-                        <h5 class="text-secondary text-uppercase mb-4">Quick Shop</h5>
-                        <div class="d-flex flex-column justify-content-start">
-                            <a class="text-secondary mb-2" href="index.html"><i
-                                    class="fa fa-angle-right mr-2"></i>Home</a>
-                            <a class="text-secondary mb-2" href="shop.html"><i class="fa fa-angle-right mr-2"></i>Our
-                                Shop</a>
-                            <a class="text-secondary mb-2" href="detail.html"><i class="fa fa-angle-right mr-2"></i>Shop
-                                Detail</a>
-                            <a class="text-secondary" href="contact.html"><i class="fa fa-angle-right mr-2"></i>Contact
-                                Us</a>
-                        </div>
-                    </div>
-                    <!-- myAccount -->
-                    <div class="col-md-4 mb-5">
-                        <h5 class="text-secondary text-uppercase mb-4">My Account</h5>
-                        <!-- <div class="d-flex flex-column justify-content-start">
-                            <a class="text-secondary mb-2" href="index.html"><i
-                                    class="fa fa-angle-right mr-2"></i>Home</a>
-                            <a class="text-secondary mb-2" href="shop.html"><i class="fa fa-angle-right mr-2"></i>Our
-                                Shop</a>
-                            <a class="text-secondary mb-2" href="detail.html"><i class="fa fa-angle-right mr-2"></i>Shop
-                                Detail</a>
-                            <a class="text-secondary" href="contact.html"><i class="fa fa-angle-right mr-2"></i>Contact
-                                Us</a>
-                        </div> -->
-                    </div>
-                    <div class="col-md-4 mb-5">
-                        <h5 class="text-secondary text-uppercase mb-4">Rumah</h5>
-                        <p>Duo stet tempor ipsum sit amet magna ipsum tempor est</p>
-                        <form action="service/action/logout.php" method="post" name="logout">
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Your Email Address">
-                                <div class="input-group-append">
-                                    <button class="btn btn-primary">Logout</button>
-                                </div>
-                            </div>
-                        </form>
-                        <h6 class="text-secondary text-uppercase mt-4 mb-3">Follow Us</h6>
-                        <div class="d-flex">
-                            <a class="btn btn-primary btn-square mr-2" href="#"><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-primary btn-square mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-primary btn-square mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a class="btn btn-primary btn-square" href="https://www.instagram.com/robertdrl_"><i
-                                    class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row border-top mx-xl-5 py-4" style="border-color: rgba(256, 256, 256, .1) !important;">
-            <div class="col-md-6 px-xl-0">
-                <p class="mb-md-0 text-center text-md-left text-secondary">
-                    &copy; <a class="text-primary" href="index.html">AdaRumah</a>. All Rights Reserved. Designed
-                    by
-                    <a class="text-primary" href="https://www.instagram.com/robertdrl_">Robertdrl</a>
-                    <br>Distributed By: <a href="#" target="_blank">Tim 8</a>
-                </p>
-            </div>
-            <div class="col-md-6 px-xl-0 text-center text-md-right">
-                <img class="img-fluid" src="img/payments.png" alt="">
-            </div>
-        </div>
-    </div>
+    <?php include 'components/footer.html' ?>
     <!-- Footer End -->
 
 
     <!-- Back to Top -->
     <a href="#" class="btn btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
-
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

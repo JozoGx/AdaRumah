@@ -14,4 +14,4 @@ for ($i=1; $i <= 20; $i++) {
   $conn->query("INSERT INTO users (email, password, name) VALUES ('$email', '$password', '$name')");
 }
 
-header('Location: /adarumah/');
+header('Location: /');
