@@ -25,7 +25,7 @@ if (isset($_SESSION['isLogin'])) {
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">  
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
@@ -52,29 +52,24 @@ if (isset($_SESSION['isLogin'])) {
                         <!-- email -->
                         <div class="control-group">
                             <input type="email" class="form-control" id="email" name="email" placeholder="Email"
-                                required="required" data-validation-required-message="Enter Email" autofocus/>
+                                required="required" data-validation-required-message="Enter Email" autofocus />
                             <p class="help-block text-danger"></p>
                         </div>
                         <!-- password -->
                         <div class="control-group">
-                            <input type="password" class="form-control" id="password" placeholder="Password"
+                            <input type="password" class="form-control" id="password" name="password" placeholder="Password"
                                 required="required" data-validation-required-message="Please enter a Password" />
                             <p class="help-block text-danger"></p>
                         </div>
-                        <div class="control-group">
-                            <input type="email" class="form-control" id="email" placeholder="Email"
-                                required="required" data-validation-required-message="Please enter your email" />
-                            <p class="help-block text-danger"></p>
-                        </div>
                         <div>
-                            <a href="index.html" class="btn btn-primary py-2 px-4">Login</a>
+                            <button type="submit" name="login" class="btn btn-primary py-2 px-4">Login</button>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
-    
+
     <!-- Login End -->
 
     <!-- JavaScript Libraries -->
