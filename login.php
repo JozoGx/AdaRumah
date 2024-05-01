@@ -57,8 +57,9 @@ if (isset($_SESSION['isLogin'])) {
                         </div>
                         <!-- password -->
                         <div class="control-group">
-                            <input type="password" class="form-control" id="password" name="password" placeholder="Password"
-                                required="required" data-validation-required-message="Please enter a Password" />
+                            <input type="password" class="form-control" id="password" name="password"
+                                placeholder="Password" required="required"
+                                data-validation-required-message="Please enter a Password" />
                             <p class="help-block text-danger"></p>
                         </div>
                         <div>

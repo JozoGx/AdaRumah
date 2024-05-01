@@ -1,7 +1,8 @@
 <?php
-
-require_once '../db.php';
+include '../db.php';
 session_start();
+
+$loginInfo = '';
 
 if (isset($_POST['login'])) {
   $email = $_POST['email'];
@@ -18,6 +19,9 @@ if (isset($_POST['login'])) {
     $_SESSION['name'] = $datas['name'];
 
     return header('Location: ../../index.php');
+  } else {
+    $loginInfo = 'Email atau password tidak cocok. Silakan coba lagi.';
+    header('Location: ../../login.php');
   }
 }
 
