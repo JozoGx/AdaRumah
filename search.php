@@ -66,39 +66,68 @@ require_once 'service/db.php';
                 <h5 class="section-title position-relative text-uppercase mb-3"><span
                         class="bg-secondary pr-3">Harga</span></h5>
                 <div class="bg-light p-4 mb-30">
-                    <form>
+                    <?php
+                    $prices = [];
+
+                    if (isset($_GET['price-all'])) {
+                        $prices = [];
+                    } else {
+                        if (isset($_GET['price-1'])) {
+                            $prices[] = "price BETWEEN 0 AND 100000000";
+                        }
+                        if (isset($_GET['price-2'])) {
+                            $prices[] = "price BETWEEN 100000000 AND 200000000";
+                        }
+                        if (isset($_GET['price-3'])) {
+                            $prices[] = "price BETWEEN 200000000 AND 500000000";
+                        }
+                        if (isset($_GET['price-4'])) {
+                            $prices[] = "price BETWEEN 500000000 AND 1000000000";
+                        }
+                        if (isset($_GET['price-5'])) {
+                            $prices[] = "price >= 1000000000";
+                        }
+                    }
+
+                    $wherePrice = "";
+                    if (!empty($prices)) {
+                        $wherePrice = " AND " . implode(" OR ", $prices);
+                    }
+                    ?>
+                    <form action="search.php" method="get" id="formFilterPrice">
                         <div
                             class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                            <input type="checkbox" class="custom-control-input" checked id="price-all">
+                            <input type="checkbox" class="custom-control-input" id="price-all" name="price-all"
+                                <?= !$prices ? 'checked' : '' ?>>
                             <label class="custom-control-label" for="price-all">Semua Harga</label>
                             <!-- <span class="badge border font-weight-normal">99+</span> -->
                         </div>
                         <div
-                            class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                            <input type="checkbox" class="custom-control-input" id="price-1">
+                            class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3" >
+                            <input type="checkbox" class="custom-control-input" id="price-1" name="price-1" <?= $prices ? 'checked' : '' ?>>
                             <label class="custom-control-label" for="price-1">Rp. 0 - Rp. 100jt</label>
                             <!-- <span class="badge border font-weight-normal">15</span> -->
                         </div>
                         <div
                             class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                            <input type="checkbox" class="custom-control-input" id="price-2">
+                            <input type="checkbox" class="custom-control-input" id="price-2" name="price-2" <?= $prices ? 'checked' : '' ?>>
                             <label class="custom-control-label" for="price-2">Rp. 100jt - Rp. 200jt</label>
                             <!-- <span class="badge border font-weight-normal">89</span> -->
                         </div>
                         <div
                             class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                            <input type="checkbox" class="custom-control-input" id="price-3">
+                            <input type="checkbox" class="custom-control-input" id="price-3" name="price-3" <?= $prices ? 'checked' : '' ?>>
                             <label class="custom-control-label" for="price-3">Rp. 200jt - Rp. 500jt</label>
                             <!-- <span class="badge border font-weight-normal">87</span> -->
                         </div>
                         <div
                             class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                            <input type="checkbox" class="custom-control-input" id="price-4">
+                            <input type="checkbox" class="custom-control-input" id="price-4" name="price-4" <?= $prices ? 'checked' : '' ?>>
                             <label class="custom-control-label" for="price-4">Rp. 500jt - Rp. 1m</label>
                             <!-- <span class="badge border font-weight-normal">46</span> -->
                         </div>
                         <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between">
-                            <input type="checkbox" class="custom-control-input" id="price-5">
+                            <input type="checkbox" class="custom-control-input" id="price-5" name="price-5" <?= $prices ? 'checked' : '' ?>>
                             <label class="custom-control-label" for="price-5">Rp. 1m+</label>
                             <!-- <span class="badge border font-weight-normal">16</span> -->
                         </div>
@@ -230,11 +259,12 @@ require_once 'service/db.php';
                         $sqlSearchPosts;
                     }
 
-                    $sqlSearchPosts .= $order;
+                    $sqlSearchPosts .= $wherePrice . $order;
 
                     $queSearchPosts = $conn->query($sqlSearchPosts);
                     $searchPosts = $queSearchPosts->fetch_all(MYSQLI_ASSOC);
 
+                    var_dump($prices);
                     foreach ($searchPosts as $search) {
                         ?>
                         <div class="col-lg-4 col-md-6 col-sm-6 pb-1">
@@ -296,9 +326,17 @@ require_once 'service/db.php';
     <script src="js/main.js"></script>
 
     <script>
+        // form termurah/termahal
         document.getElementById('sortirSelect').onchange = function () {
             document.getElementById('sortirForm').submit();
         };
+
+        // form filter harga
+        document.querySelectorAll('input[name^="price-"]').forEach(checkbox => {
+            checkbox.addEventListener('change', function () {
+                document.getElementById('formFilterPrice').submit()
+            })
+        });
 
     </script>
 </body>
