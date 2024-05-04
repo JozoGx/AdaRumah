@@ -103,7 +103,7 @@ require_once 'service/db.php';
                             <!-- <span class="badge border font-weight-normal">99+</span> -->
                         </div>
                         <div
-                            class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3" >
+                            class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
                             <input type="checkbox" class="custom-control-input" id="price-1" name="price-1" <?= $prices ? 'checked' : '' ?>>
                             <label class="custom-control-label" for="price-1">Rp. 0 - Rp. 100jt</label>
                             <!-- <span class="badge border font-weight-normal">15</span> -->
@@ -135,74 +135,6 @@ require_once 'service/db.php';
                 </div>
                 <!-- Price End -->
 
-                <!-- Color Start -->
-                <h5 class="section-title position-relative text-uppercase mb-3"><span
-                        class="bg-secondary pr-3">Rating</span></h5>
-                <div class="bg-light p-4 mb-30">
-                    <form>
-                        <div
-                            class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                            <input type="checkbox" class="custom-control-input" checked id="color-all">
-                            <label class="custom-control-label" for="price-all">Semua</label>
-                            <span class="badge border font-weight-normal">99+</span>
-                        </div>
-                        <div
-                            class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                            <input type="checkbox" class="custom-control-input" id="color-1">
-                            <label class="custom-control-label" for="color-1">1</label>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="far fa-star text-primary mr-1"></small>
-                            <small class="far fa-star text-primary mr-1"></small>
-                            <small class="far fa-star text-primary mr-1"></small>
-                            <small class="far fa-star text-primary mr-1"></small>
-                            <span class="badge border font-weight-normal">0</span>
-                        </div>
-                        <div
-                            class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                            <input type="checkbox" class="custom-control-input" id="color-2">
-                            <label class="custom-control-label" for="color-2">2</label>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="far fa-star text-primary mr-1"></small>
-                            <small class="far fa-star text-primary mr-1"></small>
-                            <small class="far fa-star text-primary mr-1"></small>
-                            <span class="badge border font-weight-normal">6</span>
-                        </div>
-                        <div
-                            class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                            <input type="checkbox" class="custom-control-input" id="color-3">
-                            <label class="custom-control-label" for="color-3">3</label>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="far fa-star text-primary mr-1"></small>
-                            <small class="far fa-star text-primary mr-1"></small>
-                            <span class="badge border font-weight-normal">68</span>
-                        </div>
-                        <div
-                            class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                            <input type="checkbox" class="custom-control-input" id="color-4">
-                            <label class="custom-control-label" for="color-4">4</label>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="far fa-star text-primary mr-1"></small>
-                            <span class="badge border font-weight-normal">86</span>
-                        </div>
-                        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between">
-                            <input type="checkbox" class="custom-control-input" id="color-5">
-                            <label class="custom-control-label" for="color-5">5</label>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <span class="badge border font-weight-normal">77</span>
-                        </div>
-                    </form>
-                </div>
-                <!-- Color End -->
             </div>
             <!-- Shop Sidebar End -->
 
@@ -264,7 +196,6 @@ require_once 'service/db.php';
                     $queSearchPosts = $conn->query($sqlSearchPosts);
                     $searchPosts = $queSearchPosts->fetch_all(MYSQLI_ASSOC);
 
-                    var_dump($prices);
                     foreach ($searchPosts as $search) {
                         ?>
                         <div class="col-lg-4 col-md-6 col-sm-6 pb-1">
