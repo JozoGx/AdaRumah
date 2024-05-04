@@ -41,11 +41,11 @@
 						class="btn btn-sm btn-light dropdown-toggle"
 						data-toggle="dropdown"
 					>
-						My Account
+						<?php echo $_SESSION['name'] ?>
 					</button>
 					<ul class="dropdown-menu">
 						<li>
-							<form action="../service/action/logout.php" method="post">
+							<form action="/service/action/logout.php" method="post">
 								<button
 									name="logout"
 									class="bg-transparent border border-light px-4"

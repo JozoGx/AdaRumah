@@ -36,7 +36,7 @@ require_once 'service/db.php';
 
 <body>
     <!-- Topbar Start -->
-    <?php include 'components/topbar.html' ?>
+    <?php include 'components/topbar.php' ?>
     <!-- Topbar End -->
 
     <!-- Navbar Start -->

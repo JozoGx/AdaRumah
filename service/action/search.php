@@ -5,5 +5,5 @@ if (isset($_GET['q'])) {
   $_SESSION['query'] = $_GET['q'];
 }
 
-header('Location: /search.php');
+header('Location: ../../search.php');
 

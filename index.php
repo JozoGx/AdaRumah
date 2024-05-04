@@ -43,7 +43,7 @@ if (!isset($_SESSION['isLogin'])) {
 
 <body>
     <!-- Topbar Start -->
-    <?php include 'components/topbar.html' ?>
+    <?php include 'components/topbar.php' ?>
     <!-- Topbar End -->
 
     <!-- Navbar Start -->
@@ -248,7 +248,7 @@ if (!isset($_SESSION['isLogin'])) {
             foreach ($posts as $post) {
                 ?>
                 <div class="col-lg-3 col-md-4 col-sm-6 mb-2">
-                    <a href="#" class="product-item bg-light mb-4 text-decoration-none bg-light">
+                    <a href="detail.php" class="product-item bg-light mb-4 text-decoration-none bg-light">
                         <div class="product-img position-relative overflow-hidden">
                             <img class="img-fluid w-100" src="photos/rumahmurah1.jpg" alt="">
                             <!-- <div class="product-action">
