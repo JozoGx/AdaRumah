@@ -15,6 +15,7 @@ if (isset($_POST['login'])) {
     $datas = mysqli_fetch_assoc($queLogin);
 
     $_SESSION['isLogin'] = true;
+    $_SESSION['id'] = $datas['id'];
     $_SESSION['email'] = $datas['email'];
     $_SESSION['name'] = $datas['name'];
 

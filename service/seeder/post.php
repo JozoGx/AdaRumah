@@ -11,8 +11,9 @@ for ($i=1; $i <= 50; $i++) {
   $title = $faker->words(3, true);
   $price = $faker->randomNumber(9, false);
   $address = $faker->streetAddress();
+  $description = $faker->paragraphs(3, true);
 
-  $conn->query("INSERT INTO posts (user_id, title, price, address) VALUES ('$user_id', '$title', '$price', '$address')");
+  $conn->query("INSERT INTO posts (user_id, title, price, address, description) VALUES ('$user_id', '$title', '$price', '$address', '$description')");
 }
 
 header('Location: ../../');
