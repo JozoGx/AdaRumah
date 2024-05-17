@@ -6,8 +6,8 @@ use Faker\Factory;
 
 $faker = Factory::create();
 
-for ($i=1; $i <= 50; $i++) { 
-  $user_id = $faker->numberBetween(1, 20);
+for ($i=1; $i <= 40; $i++) { 
+  $user_id = $faker->numberBetween(69, 85);
   $title = $faker->words(3, true);
   $price = $faker->randomNumber(9, false);
   $address = $faker->streetAddress();

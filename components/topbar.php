@@ -1,7 +1,7 @@
 
 	<div class="row align-items-center justify-content-between bg-light py-3 px-xl-5 d-none d-lg-flex">
 		<div class="col-lg-4">
-			<a href="../" class="text-decoration-none">
+			<a href="index.php" class="text-decoration-none">
 				<span class="h1 text-uppercase text-white bg-dark px-2">Ada</span>
 				<span class="h1 text-uppercase text-dark bg-white px-2 ml-n1"
 					>Rumah</span

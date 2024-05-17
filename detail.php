@@ -2,7 +2,7 @@
 session_start();
 require_once 'service/db.php';
 
-$_SESSION['post_id'] = 310;
+$_SESSION['post_id'] = 400;
 
 $sqlDetail = 'SELECT * FROM posts WHERE id = ' . $_SESSION['post_id'];
 $queDetail = $conn->query($sqlDetail);
@@ -110,6 +110,13 @@ $data = $queDetail->fetch_assoc();
                     <p class="mb-4">Volup erat ipsum diam elitr rebum et dolor. Est nonumy elitr erat diam stet sit
                         clita ea. Sanc ipsum et, labore clita lorem magna duo dolor no sea
                         Nonumy</p>
+                        <?php
+                        $sqlTelepon = "SELECT * FROM users WHERE id = " . $_SESSION['id'];
+                        $queTelepon = $conn->query($sqlTelepon);
+                        $telepon = $queTelepon->fetch_all(MYSQLI_ASSOC);
+
+                        ?>
+                
                     <div class="d-flex align-items-center mb-4 pt-2">
                         <a href="https://wa.me/62895341303880" class="btn btn-primary px-3">
                             <i class="fa fa-shopping-cart mr-1"></i> Beli
